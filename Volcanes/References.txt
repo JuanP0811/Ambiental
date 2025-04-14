@@ -1,0 +1,91 @@
+Reunion 13-07-2022
+-Caja de Texto
+-Emisiones de Combustión y Fuegos pirotécnicos: 01-Ene-2022
+-Poner un 01 antes del titulo y poner la caja de texto con mismo formato.
+
+THICKNESS (Degradado) FL 200, 300, 400 (Solidos)
+Que el archivo lea la fecha y lo ponga en las figuras.  
+Estan con UTC, Simular con Hora Local.
+Cargar el archivo, 5 am Hora Local.
+
+Respaldos cada semana.
+
+Miercoles: Cambios en la caja de texto y titulos de figuras Cuenca.
+Jueves: Busqueda y prueba de shapefiles cantonales y limites administrativos.
+Viernes: Extraccion de Variables y plots guia de visualizacion en IDV.
+Lunes: Prueba de colormaps para CL 200, CL 300 y CL 400.
+Martes: Modificaciones de texto: Extraccion de tiempo desde archivo nc (hora, dia, mes)
+Miercoles: Hora Local, lectura de fecha automatica.
+Jueves: Reunion de avance.
+Viernes: Codigo para shapefiles. 
+Lunes: Ajutes de visualizacion, tablas de color y leyenda
+Martes: Ajustes de texto, labels de volcan y ciudades, creacion de archivos de video MP4 y GIFF.
+Miercoles: Redaccion de archivo txt guia. 
+
+
+Volcanes
+Time
+https://www.codegrepper.com/code-examples/python/convert+utc+time+to+local+time+in+python
+https://dateutil.readthedocs.io/en/stable/tz.html
+https://stackoverflow.com/questions/59925368/python-change-utc-to-local-time-in-netcdf-file
+https://stackoverflow.com/questions/33985339/python-read-data-from-netcdf-file-with-time-as-seconds-since-beginning-of-me
+
+ColorMaps
+https://stackoverflow.com/questions/37327308/add-alpha-to-an-existing-matplotlib-colormap
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colorbar.html
+https://petercbsmith.github.io/color-tutorial.html
+
+Thicks
+https://matplotlib.org/stable/api/text_api.html#matplotlib.text.Text.set_horizontalalignment
+https://stackoverflow.com/questions/14852821/aligning-rotated-xticklabels-with-their-respective-xticks
+
+Legend
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html
+https://www.geeksforgeeks.org/how-to-manually-add-a-legend-with-a-color-box-on-a-matplotlib-figure/
+https://matplotlib.org/stable/api/_as_gen/matplotlib.patches.Patch.html
+https://qastack.mx/gis/113799/how-to-read-a-shapefile-in-python
+https://appgametutoriales.com/matplotlib-simbolos-y-letras-griegas/
+
+
+Shapefiles:
+https://sni.gob.ec/coberturas
+https://www.geoportaligm.gob.ec/portal/index.php/descargas/cartografia-de-libre-acceso/registro/
+https://www.ecuadorencifras.gob.ec/division-politico-administrativa/
+https://gis.uazuay.edu.ec/descargas/promsa/ecuador.htm
+https://digital-geography.com/importing-shapefiles-in-python/
+https://www.programcreek.com/python/example/58596/shapely.geometry.MultiPolygon
+https://stackoverflow.com/questions/38930192/how-to-extract-polygons-from-multipolygons-in-shapely
+https://digital-geography.com/importing-shapefiles-in-python/
+https://stackoverflow.com/questions/59846448/unicodedecodeerror-utf-8-codec-cant-decode-using-python-shapefile-reader 
+https://stackoverflow.com/questions/43971259/how-to-draw-polygons-with-python
+https://www.tutorialspoint.com/how-do-i-plot-shapely-polygons-and-objects-using-matplotlib
+https://www.geeksforgeeks.org/matplotlib-pyplot-fill-function-in-python/
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill.html
+
+Text Ciudades
+https://gis.stackexchange.com/questions/113799/reading-shapefile-in-python
+https://matplotlib.org/stable/api/_as_gen/matplotlib.patches.Patch.html#matplotlib.patches.Patch.set_edgecolor
+https://jakevdp.github.io/PythonDataScienceHandbook/04.09-text-and-annotation.html
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html
+
+Triangle
+https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.patches.RegularPolygon.html#matplotlib.patches.RegularPolygon
+https://matplotlib.org/3.1.1/gallery/shapes_and_collections/artist_reference.html#sphx-glr-gallery-shapes-and-collections-artist-reference-py
+https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.patches.FancyBboxPatch.html
+https://matplotlib.org/stable/gallery/axes_grid1/simple_anchored_artists.html
+geeksforgeeks.org/pyglet-shape-anchor-position/ 
+https://dateandtime.info/citycoordinates.php?id=3651863
+https://www.geeksforgeeks.org/matplotlib-axes-axes-add_patch-in-python/#:~:text=The%20Axes.add_patch%20%28%29%20function%20in%20axes%20module%20of,p%29%20Parameters%3A%20This%20method%20accepts%20the%20following%20parameters. 
+
+Division Politico Administrativa
+https://www.ecuadorencifras.gob.ec/division-politico-administrativa/ 
+http://www.igm.gob.ec/work/files/downloads/mapafisico.html
+
+Para correr los Shapefiles
+Necesito archivos: Dbf, Prj, Qpj, Compiled SHP, SHP
+Necesito archivos: Dbf, Sbn, Sbx, Compiled SHP, SHP
+
+https://www.guillaumedueymes.com/post/shapefiles_in_python/
+http://www.savgis.org/ecuador.htm
+https://scitools.org.uk/cartopy/docs/v0.14/matplotlib/feature_interface.html
+https://gis.uazuay.edu.ec/descargas/promsa/ecuador.htm
