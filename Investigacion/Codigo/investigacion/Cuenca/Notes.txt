@@ -1,0 +1,77 @@
+Base File Notes
+
+A guide towards the code functions and classes used to create maps and video sequences.
+
+Creator: Devi Orozco
+Institution: Universidad San Francisco de Quito
+Date: July 2022
+
+*Summary*
+This code extracts functions and meteorological variables from a nc file and creates plots per hour for 
+one day data (24 PNG files).Then, the code generates a sequence of images in a mp4 video file.
+The current model starts at 0 (Day 1, 14:00 LT) and ends in 24 (Day 2, 13:00 LT).
+
+*Functions*
+The functions used in this code were obtained mainly from Matplot and Cartopy Libraries, here a description of each one 
+and a link to further characteristics:
+
+In Main ()
+    ShapelyFeature (): This function reads and stores the main features of a specific shapefile,
+                        having as input the geometries, coordinate system (e.g. PlateCarree()), 
+                        edge and face color and transparency (alpha).              
+        See more in: https://shapely.readthedocs.io/en/stable/manual.html#:~:text=Shapely%20is%20a%20Python%20package,extension%20for%20the%20PostgreSQL%20RDBMS.
+                     https://scitools.org.uk/cartopy/docs/v0.11/crs/projections.html
+                     https://notebook.community/CAChemE/curso-python-datos/notebooks/022-matplotlib-GeoData-cartopy\
+In Plots ()
+    axes(): This class calls most of the figure elements, such as the projection, axes limits, labels, text boxes and 
+    many other. By creating an object of this class, we can set the features previously created into the map. It is 
+    important to know that both the axes class object and the shapefile fefatures must have the same projection.
+        See more in: https://matplotlib.org/stable/api/axes_api.html
+
+    contour(): Plots contour lines, it is useful to represent 3D data in a 2D plot as we do for height. 
+    contourf(): Draw contour lines with filled contours, useful to represent meteorologycal variables as temperature. 
+                Here we set a color map using cmap parameter, which has already available different color sequences. 
+    colormesh(): Creates a pseudocolor plot with non rectangular grid. It is very useful to interpolate many data points
+                 on each area and getting a density estimate. This means, instead of a point falling into a particular bin, 
+                 it adds a weight to surrounding bins. It is very useful to plot air quality data as PM.
+    quiver(): Plots a 2D field of arrows. Nedds to define arrow location, direction and current projection. Useful for wind data.
+    colorbar(): Adds a colorbar to the plot, uses shrink parameter to reduce the its size proportionally to the plot size (0 to 1). 
+        See more in:  https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.contourf.html#matplotlib.pyplot.contourf 
+                      https://jakevdp.github.io/PythonDataScienceHandbook/04.04-density-and-contour-plots.html
+                      https://matplotlib.org/stable/tutorials/colors/colormaps.html
+                      https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pcolormesh.html
+                      https://www.python-graph-gallery.com/85-density-plot-with-matplotlib
+                      https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.quiver.html
+                      https://pythonforundergradengineers.com/quiver-plot-with-matplotlib-and-jupyter-notebooks.html
+
+    xlabel(), ylabel() and title(): Set the labels and titles by knowing a string, fontsize and the text family. 
+        See more in: https://matplotlib.org/stable/tutorials/text/text_props.html
+    
+    savefig(): Saves the figure into a specyfic direction by knowing the file format, file name and the desired size (dpi). 
+        See more in: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html
+    
+In Text ()
+    AnchoredText(): Puts a textbox into the figure in a specific location. The same Achored class can be used to set an 
+                    additional shape, image or logo into the figure. 
+        See more in: https://matplotlib.org/stable/gallery/misc/anchored_artists.html
+
+In Video ()
+    list direction (): Reads the path to the images and stores it into a variable. 
+    VideoWriter_fourcc(): Reads a specific CODEC and stores it into a variable. 
+                          Note: The CODEC is a sequence of 4 characters that code to a program that compresses data to 
+                          enable faster transmission and decompresses received data. This means, it will allow the system 
+                          to reproduce the video files. Notice that you may need to install a video codec pack in your system.
+                          You can find some at the following guide.
+        See more in: https://codecguide.com/download_kl.htm 
+                     https://www.profesionalreview.com/2020/02/15/que-es-codec/
+                     
+    imread(): Reads the image file and stores it into a variable.
+    VideoWriter(): The class provides C++ API for writing video files or image sequences. Needs the file name, codec, frequency
+                   of image sequence in terms of frames per second (fps) and the size of the video, which is proportional to the size of the
+                   images previously selected.
+        See more in: https://docs.opencv.org/3.4/dd/d9e/classcv_1_1VideoWriter.html 
+                     https://learnopencv.com/reading-and-writing-videos-using-opencv/
+    Destroy AllWindows(): Closes all the vido writer windows created. 
+
+    
+                
